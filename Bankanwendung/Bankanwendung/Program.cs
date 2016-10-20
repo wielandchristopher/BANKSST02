@@ -10,6 +10,7 @@ namespace Bankanwendung
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello TEAM");
         }
     }
 }
