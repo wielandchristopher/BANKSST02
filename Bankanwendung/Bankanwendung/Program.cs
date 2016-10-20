@@ -11,6 +11,7 @@ namespace Bankanwendung
         static void Main(string[] args)
         {
             Console.WriteLine("Hello TEAM");
+            Console.WriteLine("2. Test");
         }
     }
 }
