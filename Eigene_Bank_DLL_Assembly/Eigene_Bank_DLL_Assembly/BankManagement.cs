@@ -110,34 +110,14 @@ namespace Eigene_Bank_DLL_Assembly
             return id;
         }
 
-        public void changeFirstName(int _id, string _firstName)
+        public void changeCustomer(int _id, String _Vorname, String _Nachname, String _adresse, String _Wohnort, String _Telefon)
         {
             IntPtr kunde = readUser(_id);
-            Kundenvornamenänderung(kunde, _firstName);
-        }
-
-        public void changeLastName(int _id, String _lastName)
-        {
-            IntPtr kunde = readUser(_id);
-            Kundennachnamenänderung(kunde, _lastName);
-        }
-
-        public void changeAddress(int _id, String _address)
-        {
-            IntPtr kunde = readUser(_id);
-            Kundenadressänderung(kunde, _address);
-        }
-
-        public void changeLocation(int _id, String _location)
-        {
-            IntPtr kunde = readUser(_id);
-            Kundenwohnortsänderung(kunde, _location);
-        }
-
-        public void changeTelephonNr(int _id, String _number)
-        {
-            IntPtr kunde = readUser(_id);
-            Kundentelefonänderung(kunde, _number);
+            Kundenvornamenänderung(kunde, _Vorname);
+            Kundennachnamenänderung(kunde, _Nachname);
+            Kundenadressänderung(kunde, _adresse);
+            Kundenwohnortsänderung(kunde, _Wohnort);
+            Kundentelefonänderung(kunde, _Telefon);
         }
 
         // returns -1 if Customer not found

@@ -75,11 +75,7 @@ namespace Bankanwendung
                             Console.WriteLine("Insert telephone number");
                             string telephoneNumber = Console.ReadLine().ToString();
 
-                            bankManagement.changeFirstName(user, firstName);
-                            bankManagement.changeLastName(user, lastName);
-                            bankManagement.changeAddress(user, address);
-                            bankManagement.changeLocation(user, location);
-                            bankManagement.changeTelephonNr(user, telephoneNumber);
+                            bankManagement.changeCustomer(user, firstName, lastName, address, location, telephoneNumber);
 
                             Console.WriteLine("CUSTOMER INFORMATION CHANGED!");
                         }

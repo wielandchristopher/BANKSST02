@@ -11,11 +11,7 @@ namespace Eigene_Bank_DLL_Assembly
     {
         // Interface Methoden des Customer Managements
         int createCustomer(String _Vorname, String _Nachname, String _Geburtsdatum, String _adresse, String _Wohnort, String _Telefon);
-        void changeFirstName(int _id, String _firstName);
-        void changeLastName(int _id, String _lastName);
-        void changeAddress(int _id, String _address);
-        void changeLocation(int _id, String _location);
-        void changeTelephonNr(int _id, String _number);
+        void changeCustomer(int _id, String _Vorname, String _Nachname, String _adresse, String _Wohnort, String _Telefon);
         int getCustomer(String _firstName, String _lastName, String _birthDate);        // Statt searchUser
         void deleteCustomer(int _id);
 
