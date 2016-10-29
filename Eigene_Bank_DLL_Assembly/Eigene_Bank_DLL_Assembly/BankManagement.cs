@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Eigene_Bank_DLL_Assembly
 {
-    public class CustomerManagement : ICustomerManagement
+    public class BankManagement : IBankManagement
     {
         // Schnittstellen Funktionen für Customer Management
         [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
@@ -78,6 +79,9 @@ namespace Eigene_Bank_DLL_Assembly
         public static extern IntPtr readKreditKonto(int ktnr);
 
         [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        public static extern int getKontonummer(IntPtr kunde, int whichKonto);
+
+        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern int addSparKontoverfüger(IntPtr sk, IntPtr cust);
 
         [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
@@ -136,6 +140,7 @@ namespace Eigene_Bank_DLL_Assembly
             Kundentelefonänderung(kunde, _number);
         }
 
+        // returns -1 if Customer not found
         public int getCustomer(String _firstName, String _lastName, String _birthDate)
         {
             int id = searchUser(_firstName, _lastName, _birthDate);
@@ -162,6 +167,8 @@ namespace Eigene_Bank_DLL_Assembly
         *   void transfer(int _cNumber, int _toAccNumber, String _usage, double _amount);
         *   void addSavingsAccountDisposer(int _sNumber, int _id);
         *   void addCreditAccountDisposer(int _cNumber, int _id);
+        *   int getBankAccountNumber(int _id, int _whichAccount);
+        *   void createBankStatement(int _accNumber);
         *        
         * *********************************************************************************************************************************/
 
@@ -222,7 +229,16 @@ namespace Eigene_Bank_DLL_Assembly
         {
             IntPtr quellAcc = readKreditKonto(_cNumber);
             IntPtr zielAcc = readKreditKonto(_toAccNumber);
-            IntPtr ueberweisung = NeueUeberweisung(quellAcc, zielAcc, _amount, _usage);
+            
+            if(string.Compare(zielAcc.ToString(), "0") == -1)
+            {
+                doAbheben(quellAcc, _amount);
+                doEinzahlen(zielAcc, _usage, _amount);
+            }
+            else
+            {
+                Console.WriteLine("No transfer possible, because of inserting a savings account!");
+            }
         }
 
         public void addSavingsAccountDisposer(int _sNumber, int _id)
@@ -237,6 +253,35 @@ namespace Eigene_Bank_DLL_Assembly
             IntPtr creditAcc = readKreditKonto(_cNumber);
             IntPtr customer = readUser(_id);
             addKreditKontoverfüger(creditAcc, customer);
+        }
+
+        public int getBankAccountNumber(int _id, int _whichAccount)
+        {
+            IntPtr customer = readUser(_id);
+            int accNumber = getKontonummer(customer, _whichAccount);
+
+            return accNumber;
+        }
+
+        public void createBankStatement(int _accNumber)
+        {
+            string fileName = _accNumber + "_Buchungen.txt";
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
+            Console.WriteLine("************************************************************************************");
+            try
+            {
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    String line = sr.ReadToEnd();
+                    Console.WriteLine(line);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be read");
+                Console.WriteLine(e.Message);
+            }
+            Console.WriteLine("************************************************************************************");
         }
     }
 }

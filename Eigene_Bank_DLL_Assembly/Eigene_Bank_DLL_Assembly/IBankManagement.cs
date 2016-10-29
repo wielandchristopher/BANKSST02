@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Eigene_Bank_DLL_Assembly
 {
-    public interface ICustomerManagement
+    public interface IBankManagement
     {
         // Interface Methoden des Customer Managements
         int createCustomer(String _Vorname, String _Nachname, String _Geburtsdatum, String _adresse, String _Wohnort, String _Telefon);
@@ -30,7 +30,9 @@ namespace Eigene_Bank_DLL_Assembly
         void transfer(int _cNumber, int _toAccNumber, String _usage, double _amount);
         void addSavingsAccountDisposer(int _sNumber, int _id);
         void addCreditAccountDisposer(int _cNumber, int _id);
+        int getBankAccountNumber(int _id, int _whichAccount);
 
         // Währungsmodul und Kontoauszug
+        void createBankStatement(int _accNumber);
     }
 }
