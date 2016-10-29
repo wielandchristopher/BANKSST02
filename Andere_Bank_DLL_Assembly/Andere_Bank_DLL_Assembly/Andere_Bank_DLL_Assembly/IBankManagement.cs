@@ -26,7 +26,9 @@ namespace Andere_Bank_DLL_Assembly
         void transfer(int _cNumber, int _toAccNumber, String _usage, double _amount);
         void addSavingsAccountDisposer(int _sNumber, int _id);
         void addCreditAccountDisposer(int _cNumber, int _id);
+        int getBankAccountNumber(int _id, int _whichAccount);
 
         // Währungsmodul und Kontoauszug
+        void createBankStatement(int _accNumber);
     }
 }

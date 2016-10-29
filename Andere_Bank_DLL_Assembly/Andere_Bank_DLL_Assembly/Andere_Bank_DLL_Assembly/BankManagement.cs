@@ -85,6 +85,7 @@ namespace Andere_Bank_DLL_Assembly
         /*                                        */
         /******************************************/
 
+        //fertig
         public int createSavingsAccount(int _id)
         {
             int KontoID = 0;
@@ -93,6 +94,7 @@ namespace Andere_Bank_DLL_Assembly
             return 0;
         }
 
+        //fertig
         public int createCreditAccount(int _id)
         {
             int KontoID = 0;
@@ -118,32 +120,56 @@ namespace Andere_Bank_DLL_Assembly
             xmlcontroler_closeAccount(tmpAccID);
         }
 
+        //noch nicht implementiert
         public void depositCreditAcc(int _cNumber, string _usage, double _amount)
         {
             throw new NotImplementedException();
         }
 
+        //noch nicht implementiert
         public void depositSavingsAcc(int _sNumber, string _usage, double _amount)
         {
             throw new NotImplementedException();
         }
 
+        //noch nicht implementiert
         public void withdrawCreditAcc(int _cNumber, double _amount)
         {
             throw new NotImplementedException();
         }
 
+        //noch nicht implementiert
         public void transfer(int _cNumber, int _toAccNumber, string _usage, double _amount)
         {
             throw new NotImplementedException();
         }
 
+        //noch nicht implementiert
         public void addSavingsAccountDisposer(int _sNumber, int _id)
         {
             throw new NotImplementedException();
         }
 
+        //noch nicht implementiert
         public void addCreditAccountDisposer(int _cNumber, int _id)
+        {
+            throw new NotImplementedException();
+        }
+
+        //noch nicht implementiert
+        public int getBankAccountNumber(int _id, int _whichAccount)
+        {
+            throw new NotImplementedException();
+        }
+
+        /******************************************/
+        /*                                        */
+        /*             Währungsmodul              */
+        /*                                        */
+        /******************************************/
+
+        //noch nicht implementiert
+        public void createBankStatement(int _accNumber)
         {
             throw new NotImplementedException();
         }
