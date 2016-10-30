@@ -9,38 +9,38 @@ namespace Andere_Bank_DLL_Assembly
         /**********************************************************************************************************************************************/
 
     /* Customer */
-    [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr xmlcontroler_createuser(String firstName, String lastname, String plzOrt, String strasse, String hausNr);
 
-        [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
         private static extern int xmlcontroler_updateCustomer(int cusID, String firstName, String lastname, String plzOrt, String strasse, int hausNr);
 
-        [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
         private static extern bool xmlcontroler_deleteCustomerByUUID(String cusUUID);
 
         /* Account */
-        [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
         private static extern int xmlcontroler_createAccount(int tmpType, float tmpValue);
 
-        [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
         private static extern int xmlcontroler_closeAccount(int tmpAccID);
 
-        [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
         private static extern bool xmlcontroler_attachAccount(int tmpAccID, int tmpCusID);
 
-        [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
         private static extern bool xmlcontroler_dettachAccount(int tmpAccID, int tmpCusID);
 
-        [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
         private static extern bool xmlcontroler_depositMoney(int tmpAccID, float tmpValue);
 
-        [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
         private static extern bool xmlcontroler_withdrawMoney(int tmpAccID, float tmpValue);
 
-        [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
         private static extern bool xmlcontroler_transferMoney(int tmpFromAccID, int tmpToAccID, float tmpValue);
 
-        [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
         private static extern bool xmlcontroler_getBankStatement(int tmpAccID);
 
 
@@ -99,7 +99,7 @@ namespace Andere_Bank_DLL_Assembly
         /*                                        */
         /******************************************/
 
-        //fertig
+        //Erzeugt SparKonto
         public int createSavingsAccount(int _id)
         {
             int KontoID = 0;
@@ -107,7 +107,7 @@ namespace Andere_Bank_DLL_Assembly
             xmlcontroler_attachAccount(KontoID, _id);
             return 0;
         }
-        //fertig
+        //Erzeugt KreditKonto
         public int createCreditAccount(int _id)
         {
             int KontoID = 0;
@@ -115,14 +115,14 @@ namespace Andere_Bank_DLL_Assembly
             xmlcontroler_attachAccount(KontoID, _id);
             return 0;
         }
-        //fertig
+        //Löscht SparKonto
         public void deleteSavingsAccount(int _sNumber, int _id)
         {
             xmlcontroler_dettachAccount(_sNumber, _id);
             xmlcontroler_closeAccount(_sNumber);
 
         }
-        //fertig
+        //Löscht KreditKonto
         public void deleteCreditAccount(int _cNumber, int _id)
         {
             xmlcontroler_dettachAccount(_cNumber, _id);
@@ -162,7 +162,7 @@ namespace Andere_Bank_DLL_Assembly
             }
             xmlcontroler_depositMoney(_sNumber, tmpValue);
         }
-        //fertig
+        //Abheben vom KreditKonto
         public void withdrawCreditAcc(int _cNumber, double _amount)
         {
             float tmpValue = (float)_amount;
@@ -177,7 +177,7 @@ namespace Andere_Bank_DLL_Assembly
 
             xmlcontroler_withdrawMoney(_cNumber, tmpValue);
         }
-        //fertig
+        //Überweisen
         public void transfer(int _cNumber, int _toAccNumber, string _usage, double _amount)
         {
             //Bei anderen nciht implementiert
