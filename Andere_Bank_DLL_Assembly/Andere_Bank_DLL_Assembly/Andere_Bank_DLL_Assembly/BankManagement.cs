@@ -8,8 +8,8 @@ namespace Andere_Bank_DLL_Assembly
         //Implementierung aller benötigten DLL Funktionen 
         /**********************************************************************************************************************************************/
 
-        /* Customer */
-        [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
+    /* Customer */
+    [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr xmlcontroler_createuser(String firstName, String lastname, String plzOrt, String strasse, String hausNr);
 
         [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
@@ -27,6 +27,21 @@ namespace Andere_Bank_DLL_Assembly
 
         [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
         private static extern bool xmlcontroler_attachAccount(int tmpAccID, int tmpCusID);
+
+        [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
+        private static extern bool xmlcontroler_dettachAccount(int tmpAccID, int tmpCusID);
+
+        [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
+        private static extern bool xmlcontroler_depositMoney(int tmpAccID, float tmpValue);
+
+        [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
+        private static extern bool xmlcontroler_withdrawMoney(int tmpAccID, float tmpValue);
+
+        [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
+        private static extern bool xmlcontroler_transferMoney(int tmpFromAccID, int tmpToAccID, float tmpValue);
+
+        [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
+        private static extern bool xmlcontroler_getBankStatement(int tmpAccID);
 
 
         /**********************************************************************************************************************************************/
@@ -78,7 +93,6 @@ namespace Andere_Bank_DLL_Assembly
             xmlcontroler_updateCustomer(_id, _Vorname, _Nachname, _Wohnort, _strasse, hausnummer);
         }
 
- 
         /******************************************/
         /*                                        */
         /*           Accountmanagement            */
@@ -93,7 +107,6 @@ namespace Andere_Bank_DLL_Assembly
             xmlcontroler_attachAccount(KontoID, _id);
             return 0;
         }
-
         //fertig
         public int createCreditAccount(int _id)
         {
@@ -102,61 +115,96 @@ namespace Andere_Bank_DLL_Assembly
             xmlcontroler_attachAccount(KontoID, _id);
             return 0;
         }
-
-        //passt nu vorne und hintn ned
+        //fertig
         public void deleteSavingsAccount(int _sNumber, int _id)
         {
-            int tmpAccID = 0;
-            _sNumber = 0;
-            _id = 0;
-            xmlcontroler_closeAccount(tmpAccID);
+            xmlcontroler_dettachAccount(_sNumber, _id);
+            xmlcontroler_closeAccount(_sNumber);
+
         }
-        //passt nu vorne und hintn ned
+        //fertig
         public void deleteCreditAccount(int _cNumber, int _id)
         {
-            int tmpAccID = 0;
-            _cNumber = 0;
-            _id = 0;
-            xmlcontroler_closeAccount(tmpAccID);
+            xmlcontroler_dettachAccount(_cNumber, _id);
+            xmlcontroler_closeAccount(_cNumber);
         }
-
-        //noch nicht implementiert
+        //mehrere Verfüger?
         public void depositCreditAcc(int _cNumber, string _usage, double _amount)
         {
-            throw new NotImplementedException();
-        }
+            //Bei anderen nicht implementiert
+            _usage = "";
 
-        //noch nicht implementiert
+            float tmpValue = (float)_amount;
+            if (float.IsPositiveInfinity(tmpValue))
+            {
+                tmpValue = float.MaxValue;
+            }
+            else if (float.IsNegativeInfinity(tmpValue))
+            {
+                tmpValue = float.MinValue;
+            }
+            xmlcontroler_depositMoney(_cNumber, tmpValue);
+        }
+        //mehrere Verfüger?
         public void depositSavingsAcc(int _sNumber, string _usage, double _amount)
         {
-            throw new NotImplementedException();
-        }
+            //Bei anderen nicht implementiert
+            _usage = "";
 
-        //noch nicht implementiert
+            float tmpValue = (float)_amount;
+            if (float.IsPositiveInfinity(tmpValue))
+            {
+                tmpValue = float.MaxValue;
+            }
+            else if (float.IsNegativeInfinity(tmpValue))
+            {
+                tmpValue = float.MinValue;
+            }
+            xmlcontroler_depositMoney(_sNumber, tmpValue);
+        }
+        //fertig
         public void withdrawCreditAcc(int _cNumber, double _amount)
         {
-            throw new NotImplementedException();
-        }
+            float tmpValue = (float)_amount;
+            if (float.IsPositiveInfinity(tmpValue))
+            {
+                tmpValue = float.MaxValue;
+            }
+            else if (float.IsNegativeInfinity(tmpValue))
+            {
+                tmpValue = float.MinValue;
+            }
 
-        //noch nicht implementiert
+            xmlcontroler_withdrawMoney(_cNumber, tmpValue);
+        }
+        //fertig
         public void transfer(int _cNumber, int _toAccNumber, string _usage, double _amount)
         {
-            throw new NotImplementedException();
-        }
+            //Bei anderen nciht implementiert
+            _usage = "";
 
+            float tmpValue = (float)_amount;
+            if (float.IsPositiveInfinity(tmpValue))
+            {
+                tmpValue = float.MaxValue;
+            }
+            else if (float.IsNegativeInfinity(tmpValue))
+            {
+                tmpValue = float.MinValue;
+            }
+            xmlcontroler_transferMoney(_cNumber, _toAccNumber, tmpValue);
+        }
         //noch nicht implementiert
         public void addSavingsAccountDisposer(int _sNumber, int _id)
         {
             throw new NotImplementedException();
         }
-
         //noch nicht implementiert
         public void addCreditAccountDisposer(int _cNumber, int _id)
         {
             throw new NotImplementedException();
         }
-
-        //noch nicht implementiert
+        //nicht implementiert von anderem Team
         public int getBankAccountNumber(int _id, int _whichAccount)
         {
             throw new NotImplementedException();
@@ -171,7 +219,7 @@ namespace Andere_Bank_DLL_Assembly
         //noch nicht implementiert
         public void createBankStatement(int _accNumber)
         {
-            throw new NotImplementedException();
+            xmlcontroler_getBankStatement(_accNumber);
         }
     }
 }
