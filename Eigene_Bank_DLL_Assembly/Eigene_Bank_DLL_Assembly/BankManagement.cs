@@ -10,6 +10,7 @@ namespace Eigene_Bank_DLL_Assembly
 {
     public class BankManagement : IBankManagement
     {
+        string test = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "\\PathToCFG");
         // Schnittstellen Funktionen für Customer Management
         [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr NeuerKunde(String _Vorname, String _Nachname, String _Geburtsdatum, String _adresse, String _Wohnort, String _Telefon);
@@ -87,17 +88,20 @@ namespace Eigene_Bank_DLL_Assembly
         [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern int addKreditKontoverfüger(IntPtr kk, IntPtr cust);
 
+        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void doUmrechnung(IntPtr waehrungsmmodul, String waehrung);
+        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void doKursverwaltung(IntPtr waehrungsmodul);
+
+        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr NeuesWaehrungsmodul(IntPtr konto);
 
         /**********************************************************************************************************************************
          *  Interface Methoden bezüglich des Customers
          *  ============================================
          *  
          *  int createCustomer(String _Vorname, String _Nachname, String _Geburtsdatum, String _adresse, String _Wohnort, String _Telefon);
-         *  void changeFirstName(int _id, String _firstName);
-         *  void changeLastName(int _id, String _lastName);
-         *  void changeAddress(int _id, String _address);
-         *  void changeLocation(int _id, String _location);
-         *  void changeTelephonNr(int _id, String _number);
+         *  void changeCustomer(int _id, String _Vorname, String _Nachname, String _adresse, String _Wohnort, String _Telefon)
          *  int getCustomer(String _firstName, String _lastName, String _birthDate);
          *  void deleteCustomer(int _id);
          *  
@@ -149,6 +153,8 @@ namespace Eigene_Bank_DLL_Assembly
         *   void addCreditAccountDisposer(int _cNumber, int _id);
         *   int getBankAccountNumber(int _id, int _whichAccount);
         *   void createBankStatement(int _accNumber);
+        *   void convertMoney(int _cNumber, string _currency);
+        *   void showChangeOfCourse(int _cNumber);
         *        
         * *********************************************************************************************************************************/
 
@@ -221,14 +227,14 @@ namespace Eigene_Bank_DLL_Assembly
             }
         }
 
-        public void addSavingsAccountDisposer(int _sNumber, int _id)
+        public void addSavingsAccountUser(int _sNumber, int _id)
         {
             IntPtr savingAcc = readSparKonto(_sNumber);
             IntPtr customer = readUser(_id);
             addSparKontoverfüger(savingAcc, customer);
         }
 
-        public void addCreditAccountDisposer(int _cNumber, int _id)
+        public void addCreditAccountUser(int _cNumber, int _id)
         {
             IntPtr creditAcc = readKreditKonto(_cNumber);
             IntPtr customer = readUser(_id);
@@ -246,6 +252,63 @@ namespace Eigene_Bank_DLL_Assembly
         public void createBankStatement(int _accNumber)
         {
             string fileName = _accNumber + "_Buchungen.txt";
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
+            Console.WriteLine("************************************************************************************");
+            try
+            {
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    String line = sr.ReadToEnd();
+                    Console.WriteLine(line);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be read");
+                Console.WriteLine(e.Message);
+            }
+            Console.WriteLine("************************************************************************************");
+        }
+
+        public void convertMoney(int _cNumber, string _currency)
+        {
+            IntPtr creditAcc = readKreditKonto(_cNumber);
+
+            if(_currency == "USD" || _currency == "CHF" || _currency == "GBP" || _currency == "JPY")
+            {
+                IntPtr waehrungsmodul = NeuesWaehrungsmodul(creditAcc);
+                doUmrechnung(waehrungsmodul, _currency);
+
+                string fileName = _cNumber + "_Umrechnung.txt";
+                string path = Path.Combine(Environment.CurrentDirectory, fileName);
+                Console.WriteLine("************************************************************************************");
+                try
+                {
+                    using (StreamReader sr = new StreamReader(path))
+                    {
+                        String line = sr.ReadToEnd();
+                        Console.WriteLine(line);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("The file could not be read");
+                    Console.WriteLine(e.Message);
+                }
+                Console.WriteLine("************************************************************************************");
+            }
+            else
+            {
+                Console.WriteLine("Wrong currency input!");
+            }
+        }
+
+        public void showChangeOfCourse(int _cNumber)
+        {
+            IntPtr creditAcc = readKreditKonto(_cNumber);
+            IntPtr waehrungsmodul = NeuesWaehrungsmodul(creditAcc);
+
+            string fileName = _cNumber + "_Kursverwaltung.txt";
             string path = Path.Combine(Environment.CurrentDirectory, fileName);
             Console.WriteLine("************************************************************************************");
             try

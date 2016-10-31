@@ -116,7 +116,11 @@ namespace Bankanwendung
                         Console.WriteLine("****************************************************");
                         Console.WriteLine("Press 1 to create a new credit account / Press 2 to create a new savings account / Press 3 to deposit credit account");
                         Console.WriteLine("Press 4 to deposit savings account / Press 5 to withdraw credit account / Press 6 to transfer money / Press 7 to delete savings account");
-                        Console.WriteLine("Press 8 to delete credit account / Press 9 for bank statement / Press 10 to exit the account management");
+                        Console.WriteLine("Press 8 to delete credit account / Press 9 for bank statement / Press 10 to add a savings account user");
+                        Console.WriteLine("Press 11 to add a credit account user / Press 12 to convert currency / Press 13 to show the change of course");
+                        Console.WriteLine("Press 14 to exit the account management");
+                        Console.WriteLine("****************************************************");
+
                         int accAns = Convert.ToInt32(Console.ReadLine());
 
                         if (accAns == 1)
@@ -273,7 +277,73 @@ namespace Bankanwendung
                         }
                         else if (accAns == 10)
                         {
-                            // exit the account management
+                            // add a savings account user
+                            if (savingsAcc == 0)
+                            {
+                                Console.WriteLine("****************************************************");
+                                Console.WriteLine("Insert one of your 'savings' account numbers - you can have 1 to 5 accounts [acc1 = insert 1, acc2 = insert 2, acc3 = insert 3, acc4 = insert 4, acc5 = insert 5] ");
+                                int whichAcc = Convert.ToInt32(Console.ReadLine());
+                                savingsAcc = bankManagement.getBankAccountNumber(user, whichAcc);
+                            }
+                            Console.WriteLine("****************************************************");
+                            Console.WriteLine("Insert the firstname of the user");
+                            string firstName = Console.ReadLine().ToString();
+                            Console.WriteLine("Insert the lastname of the user");
+                            string lastName = Console.ReadLine().ToString();
+                            Console.WriteLine("Insert the birthdate of the user");
+                            string birthdate = Console.ReadLine().ToString();
+
+                            int newUser = getCustomerID(bankManagement);
+
+                            bankManagement.addSavingsAccountUser(savingsAcc, newUser);
+
+                        }
+                        else if(accAns == 11)
+                        {
+                            // add a credit account user
+                            if (creditAcc == 0)
+                            {
+                                creditAcc = getAccountNumber(user, bankManagement);
+                            }
+                            Console.WriteLine("****************************************************");
+                            Console.WriteLine("Insert the firstname of the user");
+                            string firstName = Console.ReadLine().ToString();
+                            Console.WriteLine("Insert the lastname of the user");
+                            string lastName = Console.ReadLine().ToString();
+                            Console.WriteLine("Insert the birthdate of the user");
+                            string birthdate = Console.ReadLine().ToString();
+
+                            int newUser = getCustomerID(bankManagement);
+
+                            bankManagement.addCreditAccountUser(creditAcc, newUser);
+                        }
+                        else if(accAns == 12)
+                        {
+                            // convert currency
+                            if (creditAcc == 0)
+                            {
+                                creditAcc = getAccountNumber(user, bankManagement);
+                            }
+
+                            Console.WriteLine("****************************************************");
+                            Console.WriteLine("Insert currency [USD, GBP, JPY, CHF]");
+                            string _currency = Console.ReadLine().ToString();
+
+                            bankManagement.convertMoney(creditAcc, _currency);
+                        }
+                        else if(accAns == 13)
+                        {
+                            // show change of course
+                            if (creditAcc == 0)
+                            {
+                                creditAcc = getAccountNumber(user, bankManagement);
+                            }
+
+                            bankManagement.showChangeOfCourse(creditAcc);
+                        }
+                        else if(accAns == 14)
+                        {
+                            // exit
                             accM = false;
                         }
                         else
