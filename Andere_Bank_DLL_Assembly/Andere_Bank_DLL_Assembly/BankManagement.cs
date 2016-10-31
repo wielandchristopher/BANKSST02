@@ -197,12 +197,12 @@ namespace Andere_Bank_DLL_Assembly
         //noch nicht implementiert
         public void addSavingsAccountDisposer(int _sNumber, int _id)
         {
-            throw new NotImplementedException();
+            xmlcontroler_attachAccount(_sNumber, _id);
         }
         //noch nicht implementiert
         public void addCreditAccountDisposer(int _cNumber, int _id)
         {
-            throw new NotImplementedException();
+            xmlcontroler_attachAccount(_cNumber, _id);
         }
         //nicht implementiert von anderem Team
         public int getBankAccountNumber(int _id, int _whichAccount)
@@ -216,10 +216,20 @@ namespace Andere_Bank_DLL_Assembly
         /*                                        */
         /******************************************/
 
-        //noch nicht implementiert
+        //Bankstatement erstellen
         public void createBankStatement(int _accNumber)
         {
             xmlcontroler_getBankStatement(_accNumber);
+        }
+        //von anderem Team nicht implementiert
+        public void convertMoney(int _cNumber, string _currency)
+        {
+            throw new NotImplementedException();
+        }
+        //von anderem Team nicht implementiert
+        public void showChangeOfCourse(int _cNumber)
+        {
+            throw new NotImplementedException();
         }
     }
 }

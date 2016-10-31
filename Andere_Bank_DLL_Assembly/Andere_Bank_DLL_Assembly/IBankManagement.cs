@@ -25,5 +25,7 @@ namespace Andere_Bank_DLL_Assembly
 
         // Währungsmodul und Kontoauszug
         void createBankStatement(int _accNumber);
+        void convertMoney(int _cNumber, string _currency);
+        void showChangeOfCourse(int _cNumber);
     }
 }
