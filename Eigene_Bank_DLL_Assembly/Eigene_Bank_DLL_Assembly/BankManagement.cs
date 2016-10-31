@@ -10,90 +10,90 @@ namespace Eigene_Bank_DLL_Assembly
 {
     public class BankManagement : IBankManagement
     {
-        string test = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "\\PathToCFG");
+        const string path = "Resources\\Bank.dll";
         // Schnittstellen Funktionen für Customer Management
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr NeuerKunde(String _Vorname, String _Nachname, String _Geburtsdatum, String _adresse, String _Wohnort, String _Telefon);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr readUser(int id);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern int searchUser(String vorname, String nachname, String geb);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern void Kundenvornamenänderung(IntPtr Kunde, String Vorname);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern void Kundennachnamenänderung(IntPtr Kunde, String _Nachname);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern void Kundenadressänderung(IntPtr Kunde, String _Adresse);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern void Kundenwohnortsänderung(IntPtr Kunde, String _Wohnort);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern void Kundentelefonänderung(IntPtr Kunde, String _Telefon);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern void Kundendatenabfrage(IntPtr Kunde);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern void Kundeentfernen(IntPtr Kunde);
 
         // Schnittstellen Funktionen für Account Management
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr NeuesKreditkonto(IntPtr Kunde);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern void doEinzahlen(IntPtr zielkonto, String verwendungszweck, double betrag);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr NeuesSparkonto(IntPtr Kunde);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern void Sparkontoentfernen(IntPtr Konto, IntPtr Verfüger);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern void Kreditkontoentfernen(IntPtr Konto, IntPtr Verfüger);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern void doSparen(IntPtr zielkonto, String verwendungszweck, double betrag);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern void doAbheben(IntPtr zielkonto, double betrag);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr NeueUeberweisung(IntPtr quellkonto, IntPtr zielkonto, double betrag, String verwendungszweck);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern int getKreditKontonummer(IntPtr konto);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern int getSparKontonummer(IntPtr konto);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr readSparKonto(int ktnr);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr readKreditKonto(int ktnr);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern int getKontonummer(IntPtr kunde, int whichKonto);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern int addSparKontoverfüger(IntPtr sk, IntPtr cust);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern int addKreditKontoverfüger(IntPtr kk, IntPtr cust);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern void doUmrechnung(IntPtr waehrungsmmodul, String waehrung);
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern void doKursverwaltung(IntPtr waehrungsmodul);
 
-        [DllImport("C:\\Users\\Kaschi\\Documents\\GitHub\\BankSST01\\Bank\\Bank\\Debug\\Bank.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr NeuesWaehrungsmodul(IntPtr konto);
 
         /**********************************************************************************************************************************

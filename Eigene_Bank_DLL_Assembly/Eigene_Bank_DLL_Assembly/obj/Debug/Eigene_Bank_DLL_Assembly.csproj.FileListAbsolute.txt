@@ -1,0 +1,10 @@
+c:\users\kaschi\documents\visual studio 2015\Projects\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\bin\Debug\Eigene_Bank_DLL_Assembly.dll
+c:\users\kaschi\documents\visual studio 2015\Projects\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\bin\Debug\Eigene_Bank_DLL_Assembly.pdb
+c:\users\kaschi\documents\visual studio 2015\Projects\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.csprojResolveAssemblyReference.cache
+c:\users\kaschi\documents\visual studio 2015\Projects\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.dll
+c:\users\kaschi\documents\visual studio 2015\Projects\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.pdb
+C:\Users\Kaschi\Documents\GitHub\BankSST02\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\bin\Debug\Eigene_Bank_DLL_Assembly.dll
+C:\Users\Kaschi\Documents\GitHub\BankSST02\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\bin\Debug\Eigene_Bank_DLL_Assembly.pdb
+C:\Users\Kaschi\Documents\GitHub\BankSST02\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.csprojResolveAssemblyReference.cache
+C:\Users\Kaschi\Documents\GitHub\BankSST02\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.dll
+C:\Users\Kaschi\Documents\GitHub\BankSST02\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.pdb

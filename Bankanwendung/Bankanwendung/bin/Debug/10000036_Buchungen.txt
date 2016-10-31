@@ -1,0 +1,12 @@
+Kontoauszug 
+ 
+Kontonummer: 10000036 	 BankSST 
+Datum 	 	 	 Verwendungszweck 	 	 	 	 	 Betrag 
+ 
+27 10 2016 16:32:06 	  	 	 	 	 	 -100.000000 
+27 10 2016 16:32:06 	 Testeinzahlung 	 	 	 	 	 +200.000000 
+27 10 2016 17:30:13 	 Testeinzahlung 	 	 	 	 	 +200.000000 
+27 10 2016 17:31:08 	 Testeinzahlung 	 	 	 	 	 +200.000000 
+27 10 2016 17:31:49 	 Testeinzahlung 	 	 	 	 	 +200.000000 
+27 10 2016 17:58:54 	 Testeinzahlung Konto1 	 	 	 	 	 +200.000000 
+28 10 2016 11:13:54 	  	 	 	 	 	 -50.000000 

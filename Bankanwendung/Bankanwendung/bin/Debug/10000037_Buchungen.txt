@@ -1,0 +1,7 @@
+Kontoauszug 
+ 
+Kontonummer: 10000037 	 BankSST 
+Datum 	 	 	 Verwendungszweck 	 	 	 	 	 Betrag 
+ 
+27 10 2016 17:58:54 	 Testeinzahlung Konto2 	 	 	 	 	 +200.000000 
+28 10 2016 11:13:54 	 Testüberweisung 	 	 	 	 	 +50.000000 
