@@ -10,7 +10,8 @@ namespace Eigene_Bank_DLL_Assembly
 {
     public class BankManagement : IBankManagement
     {
-        const string path = "Resources\\Bank.dll";
+        const string path = "Bank.dll";
+
         // Schnittstellen Funktionen für Customer Management
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr NeuerKunde(String _Vorname, String _Nachname, String _Geburtsdatum, String _adresse, String _Wohnort, String _Telefon);
@@ -18,7 +19,7 @@ namespace Eigene_Bank_DLL_Assembly
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr readUser(int id);
 
-        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(path, EntryPoint = "searchUser", CallingConvention = CallingConvention.Cdecl)]
         public static extern int searchUser(String vorname, String nachname, String geb);
 
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
