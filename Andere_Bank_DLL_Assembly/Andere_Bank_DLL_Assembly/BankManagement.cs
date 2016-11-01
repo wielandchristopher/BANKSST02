@@ -8,11 +8,11 @@ namespace Andere_Bank_DLL_Assembly
         //Implementierung aller benötigten DLL Funktionen 
         /**********************************************************************************************************************************************/
 
-        const string path = "Resources\\XMLControler.dll";
+        const string path = "C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll";
 
         /* Customer */
-        [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\bin\\Debug\\Resources\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr xmlcontroler_createuser(string firstName, string lastname, string plzOrt, string strasse, string hausNr);
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int xmlcontroler_createuser(string firstName, string lastname, string plzOrt, string strasse, string hausNr);
 
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern int xmlcontroler_updateCustomer(int cusID, string firstName, string lastname, string plzOrt, string strasse, int hausNr);
@@ -63,8 +63,8 @@ namespace Andere_Bank_DLL_Assembly
         public int createCustomer(string _Vorname, string _Nachname, string _Geburtsdatum, string _adresse, string _Wohnort, string _Telefon) {
 
             //wird auf null gesetzt, da die fremde DLL keine Telefonnummern und Geburtsdaten speichert
-            _Telefon = null;
-            _Geburtsdatum = null;
+            _Telefon = " ";
+            _Geburtsdatum = " ";
             string _hausNr = " ";
 
             xmlcontroler_createuser(_Vorname, _Nachname, _Wohnort, _adresse, _hausNr);
@@ -73,7 +73,7 @@ namespace Andere_Bank_DLL_Assembly
         //Löscht Benutzer
         public void deleteCustomer(int _id)
         {
-            String custID = _id.ToString();
+            string custID = _id.ToString();
             xmlcontroler_deleteCustomerByUUID(custID);
         }
         //Holt den Benutzer
