@@ -8,15 +8,15 @@ namespace Andere_Bank_DLL_Assembly
         //Implementierung aller benötigten DLL Funktionen 
         /**********************************************************************************************************************************************/
 
-    /* Customer */
+        /* Customer */
         [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
-        private static extern IntPtr xmlcontroler_createuser(String firstName, String lastname, String plzOrt, String strasse, String hausNr);
+        private static extern IntPtr xmlcontroler_createuser(string firstName, string lastname, string plzOrt, string strasse, string hausNr);
 
         [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
-        private static extern int xmlcontroler_updateCustomer(int cusID, String firstName, String lastname, String plzOrt, String strasse, int hausNr);
+        private static extern int xmlcontroler_updateCustomer(int cusID, string firstName, string lastname, string plzOrt, string strasse, int hausNr);
 
         [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
-        private static extern bool xmlcontroler_deleteCustomerByUUID(String cusUUID);
+        private static extern bool xmlcontroler_deleteCustomerByUUID(string cusUUID);
 
         /* Account */
         [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
@@ -43,6 +43,11 @@ namespace Andere_Bank_DLL_Assembly
         [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
         private static extern bool xmlcontroler_getBankStatement(int tmpAccID);
 
+        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
+        private static extern bool currencyExchange_exchange(double amount, int from, int to);
+
+        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
+        unsafe private static extern bool xmlcontroler_getAccsByCusID(int tmpCusID, int* outParam);
 
         /**********************************************************************************************************************************************/
 
@@ -194,20 +199,25 @@ namespace Andere_Bank_DLL_Assembly
             }
             xmlcontroler_transferMoney(_cNumber, _toAccNumber, tmpValue);
         }
-        //noch nicht implementiert
+        //Fügt Verfüger hinzu
         public void addSavingsAccountDisposer(int _sNumber, int _id)
         {
             xmlcontroler_attachAccount(_sNumber, _id);
         }
-        //noch nicht implementiert
+        //Fügt Verfüger hinzu
         public void addCreditAccountDisposer(int _cNumber, int _id)
         {
             xmlcontroler_attachAccount(_cNumber, _id);
         }
-        //nicht implementiert von anderem Team
-        public int getBankAccountNumber(int _id, int _whichAccount)
+        //Gibt Acc eines Verfügers zurück ???
+        unsafe public int getBankAccountNumber(int _id, int _whichAccount)
         {
-            throw new NotImplementedException();
+
+            int* outParam = (int*)_whichAccount;
+
+            xmlcontroler_getAccsByCusID(_id, outParam);
+
+            return 0;
         }
 
         /******************************************/
@@ -221,10 +231,27 @@ namespace Andere_Bank_DLL_Assembly
         {
             xmlcontroler_getBankStatement(_accNumber);
         }
-        //von anderem Team nicht implementiert
-        public void convertMoney(int _cNumber, string _currency)
+        //Konvertiert Währung in verschiedene Fremdwährung
+        public void convertMoney(int Balance, string _currency)
         {
-            throw new NotImplementedException();
+            int currency = 0;
+            if(_currency == "USD")
+            {
+                currency = 1;
+            }
+            else if (_currency == "GBP")
+            {
+                currency = 2;
+            }
+            else if (_currency == "INR")
+            {
+                currency = 3;
+            }
+            else if (_currency == "JPY")
+            {
+                currency = 4;
+            }
+            currencyExchange_exchange(Balance, 0, currency);
         }
         //von anderem Team nicht implementiert
         public void showChangeOfCourse(int _cNumber)
