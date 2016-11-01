@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="14">
+<bankCustomers class_id="0" tracking_level="0" version="0">
+	<count>4</count>
+	<item_version>0</item_version>
+	<item class_id="1" tracking_level="0" version="0">
+		<cusID>0</cusID>
+		<cusUUID>a8058a1d-c9e7-41fb-9588-ae71838cca26</cusUUID>
+		<firstname>6565651</firstname>
+		<lastname>16561</lastname>
+		<plzOrt>615165</plzOrt>
+		<strasse>165</strasse>
+		<hausNr>2879148</hausNr>
+		<bankAccounts class_id="2" tracking_level="0" version="0">
+			<count>0</count>
+			<item_version>0</item_version>
+		</bankAccounts>
+	</item>
+	<item>
+		<cusID>1</cusID>
+		<cusUUID>49afd2fe-412a-4cf4-89a9-e744ace225dd</cusUUID>
+		<firstname>651165</firstname>
+		<lastname>615615</lastname>
+		<plzOrt>615615</plzOrt>
+		<strasse>615</strasse>
+		<hausNr>3534864</hausNr>
+		<bankAccounts>
+			<count>0</count>
+			<item_version>0</item_version>
+		</bankAccounts>
+	</item>
+	<item>
+		<cusID>2</cusID>
+		<cusUUID>d167861a-5c4e-4023-aaa5-c2d56656aabd</cusUUID>
+		<firstname>546465</firstname>
+		<lastname>456456</lastname>
+		<plzOrt>456</plzOrt>
+		<strasse>465456</strasse>
+		<hausNr>4189328</hausNr>
+		<bankAccounts>
+			<count>0</count>
+			<item_version>0</item_version>
+		</bankAccounts>
+	</item>
+	<item>
+		<cusID>3</cusID>
+		<cusUUID>5d7f33e5-81b2-42db-aea6-91ec8a8a07d4</cusUUID>
+		<firstname>156165156</firstname>
+		<lastname>61</lastname>
+		<plzOrt>165165</plzOrt>
+		<strasse>165</strasse>
+		<hausNr>3928416</hausNr>
+		<bankAccounts>
+			<count>0</count>
+			<item_version>0</item_version>
+		</bankAccounts>
+	</item>
+</bankCustomers>
+<bankAccounts>
+	<count>0</count>
+	<item_version>0</item_version>
+</bankAccounts>
+</boost_serialization>
+
