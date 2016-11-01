@@ -1,6 +1,6 @@
 ﻿using System;
-using Eigene_Bank_DLL_Assembly;
-//using Andere_Bank_DLL_Assembly;
+//using Eigene_Bank_DLL_Assembly;
+using Andere_Bank_DLL_Assembly;
 
 namespace Bankanwendung
 {

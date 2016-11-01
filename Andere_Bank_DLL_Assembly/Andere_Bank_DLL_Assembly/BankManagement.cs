@@ -3,51 +3,53 @@ using System.Runtime.InteropServices;
 
 namespace Andere_Bank_DLL_Assembly
 {
-    class BankManagement : IBankManagement {
+    public class BankManagement : IBankManagement {
 
         //Implementierung aller benötigten DLL Funktionen 
         /**********************************************************************************************************************************************/
 
+        const string path = "Resources\\XMLControler.dll";
+
         /* Customer */
-        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
-        private static extern IntPtr xmlcontroler_createuser(string firstName, string lastname, string plzOrt, string strasse, string hausNr);
+        [DllImport("C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\bin\\Debug\\Resources\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr xmlcontroler_createuser(string firstName, string lastname, string plzOrt, string strasse, string hausNr);
 
-        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
-        private static extern int xmlcontroler_updateCustomer(int cusID, string firstName, string lastname, string plzOrt, string strasse, int hausNr);
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int xmlcontroler_updateCustomer(int cusID, string firstName, string lastname, string plzOrt, string strasse, int hausNr);
 
-        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
-        private static extern bool xmlcontroler_deleteCustomerByUUID(string cusUUID);
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        public static extern bool xmlcontroler_deleteCustomerByUUID(string cusUUID);
 
         /* Account */
-        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
-        private static extern int xmlcontroler_createAccount(int tmpType, float tmpValue);
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int xmlcontroler_createAccount(int tmpType, float tmpValue);
 
-        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
-        private static extern int xmlcontroler_closeAccount(int tmpAccID);
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int xmlcontroler_closeAccount(int tmpAccID);
 
-        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
-        private static extern bool xmlcontroler_attachAccount(int tmpAccID, int tmpCusID);
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        public static extern bool xmlcontroler_attachAccount(int tmpAccID, int tmpCusID);
 
-        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
-        private static extern bool xmlcontroler_dettachAccount(int tmpAccID, int tmpCusID);
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        public static extern bool xmlcontroler_dettachAccount(int tmpAccID, int tmpCusID);
 
-        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
-        private static extern bool xmlcontroler_depositMoney(int tmpAccID, float tmpValue);
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        public static extern bool xmlcontroler_depositMoney(int tmpAccID, float tmpValue);
 
-        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
-        private static extern bool xmlcontroler_withdrawMoney(int tmpAccID, float tmpValue);
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        public static extern bool xmlcontroler_withdrawMoney(int tmpAccID, float tmpValue);
 
-        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
-        private static extern bool xmlcontroler_transferMoney(int tmpFromAccID, int tmpToAccID, float tmpValue);
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        public static extern bool xmlcontroler_transferMoney(int tmpFromAccID, int tmpToAccID, float tmpValue);
 
-        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
-        private static extern bool xmlcontroler_getBankStatement(int tmpAccID);
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        public static extern bool xmlcontroler_getBankStatement(int tmpAccID);
 
-        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
-        private static extern bool currencyExchange_exchange(double amount, int from, int to);
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        public static extern bool currencyExchange_exchange(double amount, int from, int to);
 
-        [DllImport("C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\Andere_Bank_DLL_Assembly\\Andere_Bank_DLL_Assembly\\XMLControler.dll", CallingConvention = CallingConvention.Cdecl)]
-        unsafe private static extern bool xmlcontroler_getAccsByCusID(int tmpCusID, int* outParam);
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        unsafe public static extern bool xmlcontroler_getAccsByCusID(int tmpCusID, int* outParam);
 
         /**********************************************************************************************************************************************/
 
@@ -60,16 +62,12 @@ namespace Andere_Bank_DLL_Assembly
         //Erstellt einen Benutzer
         public int createCustomer(string _Vorname, string _Nachname, string _Geburtsdatum, string _adresse, string _Wohnort, string _Telefon) {
 
-            //Übergebene Adresse wird aufgeteilt in Straße und Hausnummer
-            string[] separators = { ",", ".", "!", "?", ";", ":", " " };
-            string[] adr = _adresse.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-            string _strasse = adr[0];
-            string _hausNr = adr[1];
             //wird auf null gesetzt, da die fremde DLL keine Telefonnummern und Geburtsdaten speichert
             _Telefon = null;
             _Geburtsdatum = null;
+            string _hausNr = " ";
 
-            xmlcontroler_createuser(_Vorname, _Nachname, _Wohnort, _strasse, _hausNr);
+            xmlcontroler_createuser(_Vorname, _Nachname, _Wohnort, _adresse, _hausNr);
             return 0;
         }
         //Löscht Benutzer
@@ -200,12 +198,12 @@ namespace Andere_Bank_DLL_Assembly
             xmlcontroler_transferMoney(_cNumber, _toAccNumber, tmpValue);
         }
         //Fügt Verfüger hinzu
-        public void addSavingsAccountDisposer(int _sNumber, int _id)
+        public void addSavingsAccountUser(int _sNumber, int _id)
         {
             xmlcontroler_attachAccount(_sNumber, _id);
         }
         //Fügt Verfüger hinzu
-        public void addCreditAccountDisposer(int _cNumber, int _id)
+        public void addCreditAccountUser(int _cNumber, int _id)
         {
             xmlcontroler_attachAccount(_cNumber, _id);
         }

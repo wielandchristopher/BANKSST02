@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Andere_Bank_DLL_Assembly">
+      <HintPath>..\..\Andere_Bank_DLL_Assembly\Andere_Bank_DLL_Assembly\bin\Debug\Andere_Bank_DLL_Assembly.dll</HintPath>
+    </Reference>
     <Reference Include="Eigene_Bank_DLL_Assembly, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.dll</HintPath>
