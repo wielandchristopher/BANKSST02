@@ -6,3 +6,13 @@ C:\Users\Kaschi\Documents\GitHub\BankSST02\Bankanwendung\Bankanwendung\obj\Debug
 C:\Users\Kaschi\Documents\GitHub\BankSST02\Bankanwendung\Bankanwendung\obj\Debug\Bankanwendung.pdb
 C:\Users\Kaschi\Documents\GitHub\BankSST02\Bankanwendung\Bankanwendung\bin\Debug\Eigene_Bank_DLL_Assembly.dll
 C:\Users\Kaschi\Documents\GitHub\BankSST02\Bankanwendung\Bankanwendung\bin\Debug\Eigene_Bank_DLL_Assembly.pdb
+C:\Users\Wiesorium\Documents\GitHub\BankSST02\Bankanwendung\Bankanwendung\bin\Debug\Bankanwendung.exe.config
+C:\Users\Wiesorium\Documents\GitHub\BankSST02\Bankanwendung\Bankanwendung\obj\Debug\Bankanwendung.exe
+C:\Users\Wiesorium\Documents\GitHub\BankSST02\Bankanwendung\Bankanwendung\obj\Debug\Bankanwendung.pdb
+C:\Users\Wiesorium\Documents\GitHub\BankSST02\Bankanwendung\Bankanwendung\bin\Debug\Bankanwendung.exe
+C:\Users\Wiesorium\Documents\GitHub\BankSST02\Bankanwendung\Bankanwendung\bin\Debug\Bankanwendung.pdb
+C:\Users\Wiesorium\Documents\GitHub\BankSST02\Bankanwendung\Bankanwendung\bin\Debug\Andere_Bank_DLL_Assembly.dll
+C:\Users\Wiesorium\Documents\GitHub\BankSST02\Bankanwendung\Bankanwendung\bin\Debug\Eigene_Bank_DLL_Assembly.dll
+C:\Users\Wiesorium\Documents\GitHub\BankSST02\Bankanwendung\Bankanwendung\bin\Debug\Andere_Bank_DLL_Assembly.pdb
+C:\Users\Wiesorium\Documents\GitHub\BankSST02\Bankanwendung\Bankanwendung\bin\Debug\Eigene_Bank_DLL_Assembly.pdb
+C:\Users\Wiesorium\Documents\GitHub\BankSST02\Bankanwendung\Bankanwendung\obj\Debug\Bankanwendung.csprojResolveAssemblyReference.cache

@@ -7,3 +7,7 @@ C:\Users\wiela\Documents\GitHub\BankSST02\Andere_Bank_DLL_Assembly\Andere_Bank_D
 C:\Users\wiela\Documents\GitHub\BankSST02\Andere_Bank_DLL_Assembly\Andere_Bank_DLL_Assembly\bin\Debug\Andere_Bank_DLL_Assembly.pdb
 C:\Users\wiela\Documents\GitHub\BankSST02\Andere_Bank_DLL_Assembly\Andere_Bank_DLL_Assembly\obj\Debug\Andere_Bank_DLL_Assembly.dll
 C:\Users\wiela\Documents\GitHub\BankSST02\Andere_Bank_DLL_Assembly\Andere_Bank_DLL_Assembly\obj\Debug\Andere_Bank_DLL_Assembly.pdb
+C:\Users\Wiesorium\Documents\GitHub\BankSST02\Andere_Bank_DLL_Assembly\Andere_Bank_DLL_Assembly\bin\Debug\Andere_Bank_DLL_Assembly.dll
+C:\Users\Wiesorium\Documents\GitHub\BankSST02\Andere_Bank_DLL_Assembly\Andere_Bank_DLL_Assembly\bin\Debug\Andere_Bank_DLL_Assembly.pdb
+C:\Users\Wiesorium\Documents\GitHub\BankSST02\Andere_Bank_DLL_Assembly\Andere_Bank_DLL_Assembly\obj\Debug\Andere_Bank_DLL_Assembly.dll
+C:\Users\Wiesorium\Documents\GitHub\BankSST02\Andere_Bank_DLL_Assembly\Andere_Bank_DLL_Assembly\obj\Debug\Andere_Bank_DLL_Assembly.pdb

@@ -1,6 +1,7 @@
 ﻿using System;
-//using Eigene_Bank_DLL_Assembly;
+
 using Andere_Bank_DLL_Assembly;
+//using Eigene_Bank_DLL_Assembly;
 
 namespace Bankanwendung
 {
@@ -12,7 +13,8 @@ namespace Bankanwendung
 
             // Überweisung wegen verwendungszweck schaun -> vlt anders umgehen
             BankManagement bankManagement = new BankManagement();
-
+         
+            //bankManagement.showChangeOfCourse
             Console.WriteLine("BANK_SST ANWENDUNG");
             Console.WriteLine("========================= \n");
 

@@ -8,3 +8,8 @@ C:\Users\Kaschi\Documents\GitHub\BankSST02\Eigene_Bank_DLL_Assembly\Eigene_Bank_
 C:\Users\Kaschi\Documents\GitHub\BankSST02\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.csprojResolveAssemblyReference.cache
 C:\Users\Kaschi\Documents\GitHub\BankSST02\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.dll
 C:\Users\Kaschi\Documents\GitHub\BankSST02\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.pdb
+C:\Users\Wiesorium\Documents\GitHub\BankSST02\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\bin\Debug\Eigene_Bank_DLL_Assembly.dll
+C:\Users\Wiesorium\Documents\GitHub\BankSST02\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\bin\Debug\Eigene_Bank_DLL_Assembly.pdb
+C:\Users\Wiesorium\Documents\GitHub\BankSST02\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.dll
+C:\Users\Wiesorium\Documents\GitHub\BankSST02\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.pdb
+C:\Users\Wiesorium\Documents\GitHub\BankSST02\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.csprojResolveAssemblyReference.cache

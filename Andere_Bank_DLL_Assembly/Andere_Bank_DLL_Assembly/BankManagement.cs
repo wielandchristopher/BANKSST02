@@ -8,11 +8,10 @@ namespace Andere_Bank_DLL_Assembly
         //Implementierung aller benötigten DLL Funktionen 
         /**********************************************************************************************************************************************/
 
-        const string path = "C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll";
-
+        const string path = "XMLControler.dll";
         /* Customer */
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
-        public static extern int xmlcontroler_createuser(string firstName, string lastname, string plzOrt, string strasse, string hausNr);
+        public static extern int xmlcontroler_createCustomer(string firstName, string lastname, string plzOrt, string strasse, string hausNr);
 
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern int xmlcontroler_updateCustomer(int cusID, string firstName, string lastname, string plzOrt, string strasse, int hausNr);
@@ -67,7 +66,7 @@ namespace Andere_Bank_DLL_Assembly
             _Geburtsdatum = " ";
             string _hausNr = " ";
 
-            xmlcontroler_createuser(_Vorname, _Nachname, _Wohnort, _adresse, _hausNr);
+            xmlcontroler_createCustomer(_Vorname, _Nachname, _Wohnort, _adresse, _hausNr);
             return 0;
         }
         //Löscht Benutzer
