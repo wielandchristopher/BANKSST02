@@ -1,0 +1,5 @@
+C:\Users\christopher.wieland\Documents\GitHub\BankSST02\Andere_Bank_DLL_Assembly\Andere_Bank_DLL_Assembly\obj\Debug\Andere_Bank_DLL_Assembly.csprojResolveAssemblyReference.cache
+C:\Users\christopher.wieland\Documents\GitHub\BankSST02\Andere_Bank_DLL_Assembly\Andere_Bank_DLL_Assembly\bin\Debug\Andere_Bank_DLL_Assembly.dll
+C:\Users\christopher.wieland\Documents\GitHub\BankSST02\Andere_Bank_DLL_Assembly\Andere_Bank_DLL_Assembly\bin\Debug\Andere_Bank_DLL_Assembly.pdb
+C:\Users\christopher.wieland\Documents\GitHub\BankSST02\Andere_Bank_DLL_Assembly\Andere_Bank_DLL_Assembly\obj\Debug\Andere_Bank_DLL_Assembly.dll
+C:\Users\christopher.wieland\Documents\GitHub\BankSST02\Andere_Bank_DLL_Assembly\Andere_Bank_DLL_Assembly\obj\Debug\Andere_Bank_DLL_Assembly.pdb

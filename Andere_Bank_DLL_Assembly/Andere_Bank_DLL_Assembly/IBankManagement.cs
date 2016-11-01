@@ -19,11 +19,13 @@ namespace Andere_Bank_DLL_Assembly
         void depositSavingsAcc(int _sNumber, string _usage, double _amount);
         void withdrawCreditAcc(int _cNumber, double _amount);
         void transfer(int _cNumber, int _toAccNumber, string _usage, double _amount);
-        void addSavingsAccountDisposer(int _sNumber, int _id);
-        void addCreditAccountDisposer(int _cNumber, int _id);
+        void addSavingsAccountUser(int _sNumber, int _id);
+        void addCreditAccountUser(int _cNumber, int _id);
         int getBankAccountNumber(int _id, int _whichAccount);
 
         // Währungsmodul und Kontoauszug
         void createBankStatement(int _accNumber);
+        void convertMoney(int Balance, string _currency);
+        void showChangeOfCourse(int _cNumber);
     }
 }
