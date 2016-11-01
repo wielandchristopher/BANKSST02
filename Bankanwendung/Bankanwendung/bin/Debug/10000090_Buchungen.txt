@@ -1,0 +1,7 @@
+Kontoauszug 
+ 
+Kontonummer: 10000090 	 BankSST 
+Datum 	 	 	 Verwendungszweck 	 	 	 	 	 Betrag 
+ 
+29 10 2016 09:22:36 	 TESTUEBERWEISUNG HIER HIER 	 	 	 	 	 +50.900000 
+29 10 2016 09:31:54 	 test 	 	 	 	 	 +50.000000 

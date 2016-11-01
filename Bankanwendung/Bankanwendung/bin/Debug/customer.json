@@ -1,0 +1,42 @@
+{
+	"users":	[{
+			"vorname":	"Christopher",
+			"nachname":	"Wieland",
+			"id":	76,
+			"geb":	"01.05.1950",
+			"addr":	"daheimweg 2",
+			"ort":	"Salzburg",
+			"tel":	"0669878899",
+			"konto1":	10000036,
+			"konto2":	0,
+			"konto3":	0,
+			"konto4":	0,
+			"konto5":	0
+		}, {
+			"vorname":	"Person2",
+			"nachname":	"Nachname",
+			"id":	77,
+			"geb":	"01.05.1980",
+			"addr":	"Am hier 1",
+			"ort":	"Hallein",
+			"tel":	"0667178852",
+			"konto1":	10000037,
+			"konto2":	0,
+			"konto3":	0,
+			"konto4":	0,
+			"konto5":	0
+		}, {
+			"vorname":	"Stephanie",
+			"nachname":	"Testname",
+			"id":	85,
+			"geb":	"05.08.1992",
+			"addr":	"Am Steingrabenfeld 8",
+			"ort":	"Hallwang",
+			"tel":	"0587445584",
+			"konto1":	10000088,
+			"konto2":	10000089,
+			"konto3":	10000090,
+			"konto4":	10000091,
+			"konto5":	0
+		}]
+}

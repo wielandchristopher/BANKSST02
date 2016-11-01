@@ -1,0 +1,69 @@
+27 10 2016 16:32:00 - OK: Der Kunde wurde erfolgreich angelegt.
+27 10 2016 16:32:00 - OK: Der Kunde wurde erfolgreich angelegt.
+27 10 2016 16:32:01 - OK: Der Vorname wurde erfolgreich geändert.
+27 10 2016 16:32:01 - OK: Der Nachname wurde erfolgreich geändert.
+27 10 2016 16:32:01 - OK: Der Wohnort wurde erfolgreich geändert.
+27 10 2016 16:32:01 - OK: Die Telefonnummer wurde erfolgreich geändert.
+27 10 2016 16:32:01 - OK: Die Adresse wurde erfolgreich geändert.
+27 10 2016 16:32:06 - OK: Das Kreditkonto wurde erfolgreich erstellt.
+27 10 2016 16:32:06 - OK: Das Kreditkonto wurde erfolgreich erstellt.
+27 10 2016 16:32:06 - OK: Eine Abhebung wurde getaetigt.
+27 10 2016 16:32:06 - OK: Eine Einzahlung wurde getaetigt.
+27 10 2016 17:30:13 - OK: Eine Einzahlung wurde getaetigt.
+27 10 2016 17:31:08 - OK: Eine Einzahlung wurde getaetigt.
+27 10 2016 17:31:49 - OK: Eine Einzahlung wurde getaetigt.
+27 10 2016 17:58:54 - OK: Eine Einzahlung wurde getaetigt.
+27 10 2016 17:58:54 - OK: Eine Einzahlung wurde getaetigt.
+28 10 2016 11:13:54 - OK: Eine Abhebung wurde getaetigt.
+28 10 2016 11:13:54 - OK: Eine Einzahlung wurde getaetigt.
+28 10 2016 15:23:34 - OK: Der Kunde wurde erfolgreich angelegt.
+28 10 2016 15:24:15 - OK: Der Vorname wurde erfolgreich geändert.
+28 10 2016 15:24:16 - OK: Der Nachname wurde erfolgreich geändert.
+28 10 2016 15:24:16 - OK: Die Adresse wurde erfolgreich geändert.
+28 10 2016 15:24:16 - OK: Der Wohnort wurde erfolgreich geändert.
+28 10 2016 15:24:16 - OK: Die Telefonnummer wurde erfolgreich geändert.
+28 10 2016 15:25:26 - OK: Das Kreditkonto wurde erfolgreich erstellt.
+28 10 2016 15:25:41 - OK: Das Kreditkonto wurde erfolgreich erstellt.
+28 10 2016 15:25:43 - OK: Das Kreditkonto wurde erfolgreich erstellt.
+28 10 2016 15:25:47 - OK: Das SparKonto wurde erfolgreich erstellt.
+28 10 2016 15:26:18 - OK: Eine Einzahlung wurde getaetigt.
+28 10 2016 15:26:32 - OK: Eine Abhebung wurde getaetigt.
+28 10 2016 15:26:56 - OK: Eine Abhebung wurde getaetigt.
+28 10 2016 15:44:12 - OK: Eine Einzahlung wurde getaetigt.
+28 10 2016 15:44:58 - OK: Eine Einzahlung wurde getaetigt.
+28 10 2016 15:45:17 - OK: Eine Einzahlung wurde getaetigt.
+29 10 2016 08:59:58 - OK: Eine Abhebung wurde getaetigt.
+29 10 2016 08:59:58 - OK: Eine Abhebung wurde getaetigt.
+29 10 2016 08:59:58 - ERROR: Kreditkonto nicht gefunden
+29 10 2016 08:59:58 - ERROR: das übergebene Konto existiert nicht.
+29 10 2016 09:07:10 - OK: Eine Abhebung wurde getaetigt.
+29 10 2016 09:07:10 - OK: Eine Abhebung wurde getaetigt.
+29 10 2016 09:07:10 - ERROR: Kreditkonto nicht gefunden
+29 10 2016 09:07:10 - ERROR: das übergebene Konto existiert nicht.
+29 10 2016 09:10:41 - ERROR: user nicht gefunden
+29 10 2016 09:19:25 - ERROR: user nicht gefunden
+29 10 2016 09:20:01 - OK: Eine Abhebung wurde getaetigt.
+29 10 2016 09:22:36 - OK: Eine Abhebung wurde getaetigt.
+29 10 2016 09:22:36 - OK: Eine Abhebung wurde getaetigt.
+29 10 2016 09:22:36 - OK: Eine Einzahlung wurde getaetigt.
+29 10 2016 09:27:07 - OK: Eine Abhebung wurde getaetigt.
+29 10 2016 09:27:17 - OK: Eine Einzahlung wurde getaetigt.
+29 10 2016 09:31:45 - OK: Eine Abhebung wurde getaetigt.
+29 10 2016 09:31:54 - OK: Eine Einzahlung wurde getaetigt.
+29 10 2016 09:32:17 - ERROR: Ungültiger Parameter - Konto existiert nicht
+29 10 2016 09:32:39 - ERROR: Kreditkonto nicht gefunden
+29 10 2016 09:32:40 - ERROR: das übergebene Konto existiert nicht.
+29 10 2016 09:32:40 - ERROR: Kreditkonto nicht gefunden
+29 10 2016 09:32:45 - ERROR: das übergebene Konto existiert nicht.
+29 10 2016 09:33:32 - OK: Eine Abhebung wurde getaetigt.
+29 10 2016 09:33:33 - ERROR: Kreditkonto nicht gefunden
+29 10 2016 09:34:46 - ERROR: das übergebene Konto existiert nicht.
+29 10 2016 09:41:12 - ERROR: Kreditkonto nicht gefunden
+29 10 2016 09:42:30 - ERROR: Kreditkonto nicht gefunden
+29 10 2016 09:44:36 - ERROR: Kreditkonto nicht gefunden
+29 10 2016 09:45:40 - ERROR: Kreditkonto nicht gefunden
+29 10 2016 09:49:16 - ERROR: Kreditkonto nicht gefunden
+29 10 2016 09:50:18 - ERROR: Kreditkonto nicht gefunden
+29 10 2016 09:50:22 - OK: Eine Abhebung wurde getaetigt.
+29 10 2016 09:51:42 - ERROR: user nicht gefunden
+29 10 2016 09:52:07 - ERROR: Kreditkonto nicht gefunden

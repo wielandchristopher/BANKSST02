@@ -6,9 +6,14 @@ namespace Eigene_Bank_DLL_Assembly
 {
     public class BankManagement : IBankManagement
     {
+<<<<<<< HEAD
         const string path = "C:\\Users\\wiela\\Documents\\GitHub\\BankSST02\\DLL unsere Gruppe\\Bank.dll";
 
         //string test = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "\\PathToCFG");
+=======
+        const string path = "Bank.dll";
+
+>>>>>>> origin/master
         // Schnittstellen Funktionen für Customer Management
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr NeuerKunde(String _Vorname, String _Nachname, String _Geburtsdatum, String _adresse, String _Wohnort, String _Telefon);
@@ -16,7 +21,11 @@ namespace Eigene_Bank_DLL_Assembly
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr readUser(int id);
 
+<<<<<<< HEAD
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+=======
+        [DllImport(path, EntryPoint = "searchUser", CallingConvention = CallingConvention.Cdecl)]
+>>>>>>> origin/master
         public static extern int searchUser(String vorname, String nachname, String geb);
 
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
@@ -88,7 +97,10 @@ namespace Eigene_Bank_DLL_Assembly
 
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern void doUmrechnung(IntPtr waehrungsmmodul, String waehrung);
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern void doKursverwaltung(IntPtr waehrungsmodul);
 
