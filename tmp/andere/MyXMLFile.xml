@@ -2,7 +2,7 @@
 <!DOCTYPE boost_serialization>
 <boost_serialization signature="serialization::archive" version="14">
 <bankCustomers class_id="0" tracking_level="0" version="0">
-	<count>4</count>
+	<count>5</count>
 	<item_version>0</item_version>
 	<item class_id="1" tracking_level="0" version="0">
 		<cusID>0</cusID>
@@ -51,6 +51,19 @@
 		<plzOrt>165165</plzOrt>
 		<strasse>165</strasse>
 		<hausNr>3928416</hausNr>
+		<bankAccounts>
+			<count>0</count>
+			<item_version>0</item_version>
+		</bankAccounts>
+	</item>
+	<item>
+		<cusID>4</cusID>
+		<cusUUID>7823b283-4902-4189-b49f-7d0180811b9d</cusUUID>
+		<firstname>e</firstname>
+		<lastname>e</lastname>
+		<plzOrt>e</plzOrt>
+		<strasse>e</strasse>
+		<hausNr>4385824</hausNr>
 		<bankAccounts>
 			<count>0</count>
 			<item_version>0</item_version>

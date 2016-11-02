@@ -3,3 +3,4 @@
 [Oct 20 2016, 13:31:43] - xmlcontroler.cpp - Customer succesfully created!
 [Oct 20 2016, 13:31:43] - xmlcontroler.cpp - Customer succesfully created!
 [Oct 20 2016, 13:31:43] - xmlcontroler.cpp - Customer succesfully created!
+[Oct 20 2016, 13:31:43] - xmlcontroler.cpp - Customer succesfully created!

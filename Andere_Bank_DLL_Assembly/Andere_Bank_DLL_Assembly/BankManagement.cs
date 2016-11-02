@@ -78,7 +78,7 @@ namespace Andere_Bank_DLL_Assembly
         //Holt den Benutzer
         public int getCustomer(string _firstName, string _lastName, string _birthDate)
         {
-            throw new NotImplementedException();
+            return 0;
         }
         //Ändert Kundendaten
         public void changeCustomer(int _id, string _Vorname, string _Nachname, string _address, string _Wohnort, string _Telefon)

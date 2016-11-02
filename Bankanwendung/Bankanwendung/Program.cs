@@ -59,8 +59,14 @@ namespace Bankanwendung
                             // Informationen eingeben um die ID zu erhalten 
                             if(user == 0)
                             {
-                                user = getCustomerID(bankManagement);
-                            }
+                                if (getCustomerID(bankManagement) == 0)
+                                {
+                                    Console.WriteLine("\nFUNKTION VON FREMDER DLL NICHT IMPLEMENTIERT");
+                                }
+                                else
+                                {
+                                    user = getCustomerID(bankManagement);
+                                
 
                             Console.WriteLine("Insert first name");
                             string firstName = Console.ReadLine().ToString();
@@ -76,6 +82,8 @@ namespace Bankanwendung
                             bankManagement.changeCustomer(user, firstName, lastName, address, location, telephoneNumber);
 
                             Console.WriteLine("CUSTOMER INFORMATION CHANGED!");
+                                }
+                            }
                         }
                         // Delete Customer Account
                         else if (customerAns == 3)
