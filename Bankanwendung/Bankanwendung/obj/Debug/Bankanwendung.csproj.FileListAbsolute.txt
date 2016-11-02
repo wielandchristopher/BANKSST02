@@ -26,3 +26,6 @@ C:\Users\christopher.wieland\Documents\GitHub\BankSST02\Bankanwendung\Bankanwend
 C:\Users\christopher.wieland\Documents\GitHub\BankSST02\Bankanwendung\Bankanwendung\bin\Debug\Andere_Bank_DLL_Assembly.pdb
 C:\Users\christopher.wieland\Documents\GitHub\BankSST02\Bankanwendung\Bankanwendung\bin\Debug\Eigene_Bank_DLL_Assembly.pdb
 C:\Users\christopher.wieland\Documents\GitHub\BankSST02\Bankanwendung\Bankanwendung\obj\Debug\Bankanwendung.csprojResolveAssemblyReference.cache
+C:\Users\Chris\Documents\GitHub\BankSST02\Bankanwendung\Bankanwendung\bin\Debug\Bankanwendung.exe.config
+C:\Users\Chris\Documents\GitHub\BankSST02\Bankanwendung\Bankanwendung\obj\Debug\Bankanwendung.exe
+C:\Users\Chris\Documents\GitHub\BankSST02\Bankanwendung\Bankanwendung\obj\Debug\Bankanwendung.pdb

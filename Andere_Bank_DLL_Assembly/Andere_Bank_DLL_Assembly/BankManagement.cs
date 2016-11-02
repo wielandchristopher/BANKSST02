@@ -19,6 +19,9 @@ namespace Andere_Bank_DLL_Assembly
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern bool xmlcontroler_deleteCustomerByUUID(string cusUUID);
 
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int xmlcontroler_getCusID(string _firstname, string _lastName);
+
         /* Account */
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern int xmlcontroler_createAccount(int tmpType, float tmpValue);
@@ -78,8 +81,9 @@ namespace Andere_Bank_DLL_Assembly
         //Holt den Benutzer
         public int getCustomer(string _firstName, string _lastName, string _birthDate)
         {
-            return 0;
+            return xmlcontroler_getCusID(_firstName, _lastName);
         }
+
         //Ändert Kundendaten
         public void changeCustomer(int _id, string _Vorname, string _Nachname, string _address, string _Wohnort, string _Telefon)
         {
