@@ -16,9 +16,6 @@ namespace Eigene_Bank_DLL_Assembly
         private static extern IntPtr readUser(int id);
         
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
-
-        [DllImport(path, EntryPoint = "searchUser", CallingConvention = CallingConvention.Cdecl)]
-
         public static extern int searchUser(String vorname, String nachname, String geb);
 
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
