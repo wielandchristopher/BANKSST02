@@ -191,5 +191,13 @@
 			"VerfügerID3":	0,
 			"VerfügerID4":	0,
 			"VerfügerID5":	0
+		}, {
+			"Kontonummer":	10000118,
+			"Kontostand":	0,
+			"VerfügerID":	77,
+			"VerfügerID2":	0,
+			"VerfügerID3":	0,
+			"VerfügerID4":	0,
+			"VerfügerID5":	0
 		}]
 }

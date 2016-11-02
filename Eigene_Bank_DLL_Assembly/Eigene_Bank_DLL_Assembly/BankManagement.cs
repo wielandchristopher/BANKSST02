@@ -1,9 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 
 namespace Eigene_Bank_DLL_Assembly
@@ -18,8 +14,11 @@ namespace Eigene_Bank_DLL_Assembly
 
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr readUser(int id);
-
+        
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+
+        [DllImport(path, EntryPoint = "searchUser", CallingConvention = CallingConvention.Cdecl)]
+
         public static extern int searchUser(String vorname, String nachname, String geb);
 
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
@@ -91,6 +90,7 @@ namespace Eigene_Bank_DLL_Assembly
 
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern void doUmrechnung(IntPtr waehrungsmmodul, String waehrung);
+
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern void doKursverwaltung(IntPtr waehrungsmodul);
 
@@ -110,7 +110,7 @@ namespace Eigene_Bank_DLL_Assembly
 
         public int createCustomer(String _Vorname, String _Nachname, String _Geburtsdatum, String _adresse, String _Wohnort, String _Telefon)
         {
-            IntPtr neuerKunde = NeuerKunde(_Vorname, _Nachname,  _Geburtsdatum,  _adresse,  _Wohnort,  _Telefon);
+            IntPtr neuerKunde = NeuerKunde(_Vorname, _Nachname, _Geburtsdatum, _adresse, _Wohnort, _Telefon);
             int id = searchUser(_Vorname, _Nachname, _Geburtsdatum);
             return id;
         }

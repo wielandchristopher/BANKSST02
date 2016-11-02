@@ -67,3 +67,14 @@
 29 10 2016 09:50:22 - OK: Eine Abhebung wurde getaetigt.
 29 10 2016 09:51:42 - ERROR: user nicht gefunden
 29 10 2016 09:52:07 - ERROR: Kreditkonto nicht gefunden
+01 11 2016 00:51:52 - OK: Der Kunde wurde erfolgreich angelegt.
+01 11 2016 00:52:01 - OK: Der Kunde wurde erfolgreich angelegt.
+01 11 2016 00:52:31 - OK: Der Kunde wurde erfolgreich angelegt.
+01 11 2016 00:52:38 - OK: Der Kunde wurde erfolgreich entfernt.
+01 11 2016 00:56:10 - ERROR: user nicht gefunden
+01 11 2016 00:59:30 - ERROR: user nicht gefunden
+01 11 2016 00:59:51 - OK: Das SparKonto wurde erfolgreich erstellt.
+01 11 2016 01:51:07 - OK: Der Kunde wurde erfolgreich angelegt.
+01 11 2016 01:51:43 - OK: Der Kunde wurde erfolgreich angelegt.
+01 11 2016 01:53:18 - OK: Der Kunde wurde erfolgreich angelegt.
+01 11 2016 01:58:28 - OK: Der Kunde wurde erfolgreich angelegt.
