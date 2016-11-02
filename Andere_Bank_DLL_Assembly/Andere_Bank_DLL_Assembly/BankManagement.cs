@@ -8,7 +8,7 @@ namespace Andere_Bank_DLL_Assembly
         //Implementierung aller benötigten DLL Funktionen 
         /**********************************************************************************************************************************************/
 
-        const string path = "XMLControler.dll";
+        const string path = "C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankSST02\\DLL andere Gruppe\\XMLControler.dll";
         /* Customer */
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern int xmlcontroler_createCustomer(string firstName, string lastname, string plzOrt, string strasse, string hausNr);

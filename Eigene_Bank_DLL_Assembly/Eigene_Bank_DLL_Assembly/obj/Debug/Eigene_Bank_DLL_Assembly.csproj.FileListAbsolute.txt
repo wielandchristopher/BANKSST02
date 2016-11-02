@@ -13,3 +13,5 @@ C:\Users\Wiesorium\Documents\GitHub\BankSST02\Eigene_Bank_DLL_Assembly\Eigene_Ba
 C:\Users\Wiesorium\Documents\GitHub\BankSST02\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.dll
 C:\Users\Wiesorium\Documents\GitHub\BankSST02\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.pdb
 C:\Users\Wiesorium\Documents\GitHub\BankSST02\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.csprojResolveAssemblyReference.cache
+C:\Users\christopher.wieland\Documents\GitHub\BankSST02\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.csprojResolveAssemblyReference.cache
+C:\Users\christopher.wieland\Documents\GitHub\BankSST02\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.dll
