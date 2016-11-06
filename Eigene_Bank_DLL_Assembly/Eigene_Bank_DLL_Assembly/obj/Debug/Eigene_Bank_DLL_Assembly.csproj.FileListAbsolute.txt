@@ -20,3 +20,7 @@ C:\Users\christopher.wieland\Documents\GitHub\BankAssembly\Eigene_Bank_DLL_Assem
 C:\Users\christopher.wieland\Documents\GitHub\BankAssembly\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.csprojResolveAssemblyReference.cache
 C:\Users\christopher.wieland\Documents\GitHub\BankAssembly\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.dll
 C:\Users\christopher.wieland\Documents\GitHub\BankAssembly\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.pdb
+C:\Users\christopher.wieland\Documents\GitHub\BankNetwork\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\bin\Debug\Eigene_Bank_DLL_Assembly.dll
+C:\Users\christopher.wieland\Documents\GitHub\BankNetwork\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\bin\Debug\Eigene_Bank_DLL_Assembly.pdb
+C:\Users\christopher.wieland\Documents\GitHub\BankNetwork\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.dll
+C:\Users\christopher.wieland\Documents\GitHub\BankNetwork\Eigene_Bank_DLL_Assembly\Eigene_Bank_DLL_Assembly\obj\Debug\Eigene_Bank_DLL_Assembly.pdb

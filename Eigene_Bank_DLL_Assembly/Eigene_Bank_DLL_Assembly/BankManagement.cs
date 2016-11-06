@@ -6,7 +6,7 @@ namespace Eigene_Bank_DLL_Assembly
 {
     public class BankManagement : IBankManagement
     {
-        const string path = "Bank.dll";
+        const string path = "C:\\Users\\christopher.wieland\\Documents\\GitHub\\BankNetwork\\Eigene_Bank_DLL_Assembly\\Eigene_Bank_DLL_Assembly\\Bank.dll";
 
         // Schnittstellen Funktionen für Customer Management
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
@@ -80,7 +80,7 @@ namespace Eigene_Bank_DLL_Assembly
         public static extern int getKontonummer(IntPtr kunde, int whichKonto);
 
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
-        public static extern int getAccountType(int Accnumber);
+        public static extern int getAccountType(int kontonummer);
 
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern int addSparKontoverfüger(IntPtr sk, IntPtr cust);
@@ -96,6 +96,27 @@ namespace Eigene_Bank_DLL_Assembly
 
         [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr NeuesWaehrungsmodul(IntPtr konto);
+
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        public static extern double getSparkontostand(IntPtr konto);
+
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        public static extern double getKreditkontostand(IntPtr konto);
+
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int getKreditkontoverfüger(IntPtr konto, int whichcust);
+
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int getSparkontoverfüger(IntPtr konto, int whichcust);
+
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int deleteKreditkontoVerfüger(IntPtr konto, IntPtr cust);
+
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int deleteSparkontoVerfüger(IntPtr konto, IntPtr cust);
+
+        [DllImport(path, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void doSparbuchabheben(IntPtr konto, double amount);
 
         /**********************************************************************************************************************************
          *  Interface Methoden bezüglich des Customers
@@ -190,7 +211,7 @@ namespace Eigene_Bank_DLL_Assembly
         {
             IntPtr creditAccount = readKreditKonto(_cNumber);
             IntPtr customer = readUser(_id);
-            Sparkontoentfernen(creditAccount, customer);
+            Kreditkontoentfernen(creditAccount, customer);
         }
 
         public void depositCreditAcc(int _cNumber, String _usage, double _amount)
@@ -202,7 +223,7 @@ namespace Eigene_Bank_DLL_Assembly
         public void depositSavingsAcc(int _sNumber, String _usage, double _amount)
         {
             IntPtr savingAcc = readSparKonto(_sNumber);
-            doEinzahlen(savingAcc, _usage, _amount);
+            doSparen(savingAcc, _usage, _amount);
         }
 
         public void withdrawCreditAcc(int _cNumber, double _amount)
@@ -214,13 +235,21 @@ namespace Eigene_Bank_DLL_Assembly
         // Anschauen
         public void transfer(int _cNumber, int _toAccNumber, String _usage, double _amount)
         {
-            IntPtr quellAcc = readKreditKonto(_cNumber);
-            IntPtr zielAcc = readKreditKonto(_toAccNumber);
-            
-            if(string.Compare(zielAcc.ToString(), "0") == -1)
+         
+            //return 1 = Kreditkonto, return 0 = Sparkonto
+            if((getAccType(_cNumber) == 1) && (getAccType(_toAccNumber) == 1))
             {
+                IntPtr quellAcc = readKreditKonto(_cNumber);
+                IntPtr zielAcc = readKreditKonto(_toAccNumber);
                 doAbheben(quellAcc, _amount);
                 doEinzahlen(zielAcc, _usage, _amount);
+            }
+            else if ((getAccType(_cNumber) == 1) && (getAccType(_toAccNumber) == 0))
+            {
+                IntPtr quellAcc = readKreditKonto(_cNumber);
+                IntPtr zielAcc = readSparKonto(_toAccNumber);
+                doAbheben(quellAcc, _amount);                
+                doSparen(zielAcc, _usage, _amount);
             }
             else
             {
@@ -246,13 +275,13 @@ namespace Eigene_Bank_DLL_Assembly
         {
             IntPtr customer = readUser(_id);
             int accNumber = getKontonummer(customer, _whichAccount);
-
+            
             return accNumber;
         }
 
-        public string getAccType(int Accnumber)
+        public int getAccType(int Accnumber)
         {
-            return getAccountType(Accnumber).ToString();
+            return getAccountType(Accnumber);
         }
 
         public void createBankStatement(int _accNumber)
@@ -333,6 +362,53 @@ namespace Eigene_Bank_DLL_Assembly
             Console.WriteLine("************************************************************************************");
         }
 
-        
+        public double getDepositkontostand(int snumber){
+
+            IntPtr depositAcc = readSparKonto(snumber);           
+            return getSparkontostand(depositAcc);
+        }
+
+        public double getCreditkontostand(int cnumber)
+        {
+            IntPtr creditAcc = readKreditKonto(cnumber);
+            return getKreditkontostand(creditAcc);
+        }
+        public int getDepositAccOwner(int snumber, int whichuser)
+        {
+            IntPtr depositAcc = readSparKonto(snumber);
+            return getSparkontoverfüger(depositAcc, whichuser);
+
+        }
+        public int getCreditAccOwner(int cnumber, int whichuser)
+        {
+            IntPtr creditAcc = readKreditKonto(cnumber);
+            return getKreditkontoverfüger(creditAcc, whichuser);
+
+        }
+
+        public int deleteCreditAccUser(int Kontonummer, int additionalUser)
+        {
+            IntPtr creditAcc = readKreditKonto(Kontonummer);
+            IntPtr cust = readUser(additionalUser);
+
+            deleteKreditkontoVerfüger(creditAcc, cust);
+
+            return 0;
+        }
+        public int deleteSavingsAccUser(int Kontonummer, int additionalUser)
+        {
+            IntPtr savingsAcc = readSparKonto(Kontonummer);
+            IntPtr cust = readUser(additionalUser);
+
+            deleteSparkontoVerfüger(savingsAcc, cust);
+
+            return 0;
+        }
+
+        public void withdrawSavingsAcc(int _snumber, double _amount)
+        {
+            IntPtr savingsAcc = readSparKonto(_snumber);
+            doSparbuchabheben(savingsAcc, _amount);
+        }
     }
 }
